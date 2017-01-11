@@ -1,6 +1,9 @@
 //www.elegoo.com
 //2016.06.13
-
+#define red 22
+#define green 23
+long x;
+int y;
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * Example to change UID of changeable MIFARE card.
@@ -40,6 +43,8 @@ MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance
 MFRC522::MIFARE_Key key;
 
 void setup() {
+  pinMode(23, OUTPUT);
+  pinMode(22, OUTPUT);
   Serial.begin(9600); 
    
   SPI.begin();         // Init SPI bus
@@ -72,10 +77,35 @@ void loop() {
   
   
   
-  for (byte i = 0; i < mfrc522.uid.size; i++) {
-    int x = mfrc522.uid.uidByte[i];
-    Serial.print(x);
+  
+     x = mfrc522.uid.uidByte[3];
+    Serial.println(x);
+     
+    check();
+    
+   
+    
   } 
   
-  delay(2000);
+
+void check() {
+  y=x;
+  if(y=117) {
+   redgo();
+  
+}else if (y=213) {
+  greengo();
 }
+}
+
+void greengo() {
+  digitalWrite(23, HIGH);
+  digitalWrite(22, LOW);
+}
+void redgo() {
+  digitalWrite(22, HIGH);
+  digitalWrite(23, LOW);
+}
+
+   
+ 
