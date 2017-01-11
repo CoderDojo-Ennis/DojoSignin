@@ -203,9 +203,9 @@ void httppost () {
 
   delay(500);
 
-  if(esp.find(">")) { Serial.println("Sending.."); esp.print(postRequest);};
+  if(esp.find(">")) { Serial.println("Sending.."); esp.print(postRequest);}
 
-  if( esp.find("SEND OK")) { Serial.println("Packet sent");};
+  if( esp.find("SEND OK")) { Serial.println("Packet sent");}
 
   while (esp.available()) {
 
