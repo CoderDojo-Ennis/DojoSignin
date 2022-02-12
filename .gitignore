@@ -1,0 +1,4 @@
+*.spec
+NFC/__pycache__
+NFC/build
+NFC/dist

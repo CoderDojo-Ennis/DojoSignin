@@ -1,0 +1,1 @@
+This is some old, unused stuff kept around in case we ever come back to using a fingerprint system.
